@@ -5,28 +5,28 @@
 class Bubblejump < Formula
   desc "Quickly get shell access to EC2 instances in our VPC"
   homepage "https://github.com/redbubble/bubblejump"
-  version "0.5"
+  version "0.5.1"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "http://apt.redbubble.com/bubblejump/v0.5/bubblejump_0.5_Darwin_x86_64.tar.gz"
-      sha256 "c7aa9764eb03de84d3d59add7296da84e49ed9ffc12c3ec9aa0a3d766f4a9ff1"
+      url "http://apt.redbubble.com/bubblejump/v0.5.1/bubblejump_0.5.1_Darwin_x86_64.tar.gz"
+      sha256 "a05638467f9dcad83aea94748bf64ca9568be1154f03bf700880c8083b21bd2a"
     end
     if Hardware::CPU.arm?
-      url "http://apt.redbubble.com/bubblejump/v0.5/bubblejump_0.5_Darwin_arm64.tar.gz"
-      sha256 "2c676713a49ec563ea58d44372501f0cc5b4524489dfa118089eae2fcb516e8d"
+      url "http://apt.redbubble.com/bubblejump/v0.5.1/bubblejump_0.5.1_Darwin_arm64.tar.gz"
+      sha256 "b64a03889c3a5a57d6f51e403c67a4ceb8e297bd5f89497e9612faaf1501e959"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "http://apt.redbubble.com/bubblejump/v0.5/bubblejump_0.5_Linux_x86_64.tar.gz"
-      sha256 "d0bc0c5201820e5bcdbdb942696fd9394a5790f11d404a649ea904f46bf66e20"
+      url "http://apt.redbubble.com/bubblejump/v0.5.1/bubblejump_0.5.1_Linux_x86_64.tar.gz"
+      sha256 "6a2cbc4823dfc592d78e0d2f068bcb9f508a0f77fc9a4b1c8d472978afe1068f"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "http://apt.redbubble.com/bubblejump/v0.5/bubblejump_0.5_Linux_arm64.tar.gz"
-      sha256 "8367da0ed1f3fc79defd350e4ee370703e8fcdaf45d309190c2da55341bcb49a"
+      url "http://apt.redbubble.com/bubblejump/v0.5.1/bubblejump_0.5.1_Linux_arm64.tar.gz"
+      sha256 "302a526128085abad54400eb161e938b0b7e7492ba7604fa482e1551f57f926a"
     end
   end
 

@@ -5,38 +5,55 @@
 class Bubblejump < Formula
   desc "Quickly get shell access to EC2 instances in our VPC"
   homepage "https://github.com/redbubble/bubblejump"
-  version "0.5.1"
-  bottle :unneeded
+  version "0.5.2"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "http://apt.redbubble.com/bubblejump/v0.5.1/bubblejump_0.5.1_Darwin_x86_64.tar.gz"
-      sha256 "a05638467f9dcad83aea94748bf64ca9568be1154f03bf700880c8083b21bd2a"
-    end
     if Hardware::CPU.arm?
-      url "http://apt.redbubble.com/bubblejump/v0.5.1/bubblejump_0.5.1_Darwin_arm64.tar.gz"
-      sha256 "b64a03889c3a5a57d6f51e403c67a4ceb8e297bd5f89497e9612faaf1501e959"
+      url "http://apt.redbubble.com/bubblejump/v0.5.2/bubblejump_0.5.2_Darwin_arm64.tar.gz"
+      sha256 "f07a6cc56ade0c3d21e1ec529df26d7ad64371f62e8efdb98f33b7e7c7d89985"
+
+      def install
+        bin.install "bubblejump"
+        bash_completion.install "bash.completion" => "bubblejump"
+        zsh_completion.install "zsh.completion" => "_bubblejump"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "http://apt.redbubble.com/bubblejump/v0.5.2/bubblejump_0.5.2_Darwin_x86_64.tar.gz"
+      sha256 "d25de39844b9c034a644b30967512fb437d80237a0b586bc13431be5e9802929"
+
+      def install
+        bin.install "bubblejump"
+        bash_completion.install "bash.completion" => "bubblejump"
+        zsh_completion.install "zsh.completion" => "_bubblejump"
+      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "http://apt.redbubble.com/bubblejump/v0.5.1/bubblejump_0.5.1_Linux_x86_64.tar.gz"
-      sha256 "6a2cbc4823dfc592d78e0d2f068bcb9f508a0f77fc9a4b1c8d472978afe1068f"
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "http://apt.redbubble.com/bubblejump/v0.5.1/bubblejump_0.5.1_Linux_arm64.tar.gz"
-      sha256 "302a526128085abad54400eb161e938b0b7e7492ba7604fa482e1551f57f926a"
+      url "http://apt.redbubble.com/bubblejump/v0.5.2/bubblejump_0.5.2_Linux_arm64.tar.gz"
+      sha256 "bbcc247f30179e9a07b0dffa1dda3f32c3dff4019c7692d89de0ea1d968916b8"
+
+      def install
+        bin.install "bubblejump"
+        bash_completion.install "bash.completion" => "bubblejump"
+        zsh_completion.install "zsh.completion" => "_bubblejump"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "http://apt.redbubble.com/bubblejump/v0.5.2/bubblejump_0.5.2_Linux_x86_64.tar.gz"
+      sha256 "e7ba1c61e8e0b87e22331161cce52ba99bf774befa86852cbdf1b5cd2326c2bd"
+
+      def install
+        bin.install "bubblejump"
+        bash_completion.install "bash.completion" => "bubblejump"
+        zsh_completion.install "zsh.completion" => "_bubblejump"
+      end
     end
   end
 
   depends_on "yak"
-
-  def install
-    bin.install "bubblejump"
-    bash_completion.install "bash.completion" => "bubblejump"
-    zsh_completion.install "zsh.completion" => "_bubblejump"
-  end
 
   test do
     system "#{bin}/bubblejump version"

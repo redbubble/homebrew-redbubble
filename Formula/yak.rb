@@ -5,12 +5,12 @@
 class Yak < Formula
   desc "A tool to log in to AWS through Okta"
   homepage "https://github.com/redbubble/yak"
-  version "1.6.0"
+  version "1.6.1"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/redbubble/yak/releases/download/v1.6.0/yak_1.6.0_darwin_arm64.tar.gz"
-      sha256 "9151d0110d5fbf842759089749911ec406590c1e2df651bcdb2b5eff1d213a2a"
+      url "https://github.com/redbubble/yak/releases/download/v1.6.1/yak_1.6.1_darwin_arm64.tar.gz"
+      sha256 "2748a101a2571d27fd05dcf41694d85da10355afe555c9d8c3710eed5f95b45f"
 
       def install
         bin.install "yak"
@@ -19,8 +19,8 @@ class Yak < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/redbubble/yak/releases/download/v1.6.0/yak_1.6.0_darwin_amd64.tar.gz"
-      sha256 "5128c522bacddb58ba1aa7949c49d063679db7eb3d58b0afb1dcb72d2e0b609a"
+      url "https://github.com/redbubble/yak/releases/download/v1.6.1/yak_1.6.1_darwin_amd64.tar.gz"
+      sha256 "23155da611fe0300152d74bc3cf6755f10b77dabdfd39272807967b1d7420391"
 
       def install
         bin.install "yak"
@@ -32,8 +32,8 @@ class Yak < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/redbubble/yak/releases/download/v1.6.0/yak_1.6.0_linux_arm64.tar.gz"
-      sha256 "7904ca91775875787611943b41f3a6da6b431d4f31e2f6e42705a302fd8e1489"
+      url "https://github.com/redbubble/yak/releases/download/v1.6.1/yak_1.6.1_linux_arm64.tar.gz"
+      sha256 "6cb670894750c82a68c37d399a4e1327a7401aa4239bb54c9b3a890bba3f73ba"
 
       def install
         bin.install "yak"
@@ -42,8 +42,8 @@ class Yak < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/redbubble/yak/releases/download/v1.6.0/yak_1.6.0_linux_amd64.tar.gz"
-      sha256 "878d98c28a323d28495182c23e8db9bff17d906cfe2a2a23b3d056980b6dc23a"
+      url "https://github.com/redbubble/yak/releases/download/v1.6.1/yak_1.6.1_linux_amd64.tar.gz"
+      sha256 "64249ceed19b29c649d72fc31bb7a848e7e8f2f5c3ebb95043fd5dc77ffc56f9"
 
       def install
         bin.install "yak"

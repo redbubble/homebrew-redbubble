@@ -12,7 +12,7 @@ class Bubblejump < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "http://apt.redbubble.com/bubblejump/v0.8.0/bubblejump_0.8.0_Darwin_arm64.tar.gz"
-      sha256 "16476a6d21ebda60d13ad968ba7ec83cce19e7be13b8094440f37d15d11d721d"
+      sha256 "2a9c774f15cb045dd9fe44535042392857085a307500be3bbde562e96b1ac4a6"
 
       def install
         bin.install "bubblejump"
@@ -22,7 +22,7 @@ class Bubblejump < Formula
     end
     if Hardware::CPU.intel?
       url "http://apt.redbubble.com/bubblejump/v0.8.0/bubblejump_0.8.0_Darwin_x86_64.tar.gz"
-      sha256 "c9ef7982a80bf85d28102667827d030a5f89276e53a464a8d84df40a329f62fe"
+      sha256 "e99c2bc92a37b978df9746075d1772bb18625f0e38f44b92fa719699dc03d7a8"
 
       def install
         bin.install "bubblejump"
@@ -35,7 +35,7 @@ class Bubblejump < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "http://apt.redbubble.com/bubblejump/v0.8.0/bubblejump_0.8.0_Linux_arm64.tar.gz"
-      sha256 "b2e39bfaa14a495c5f28782e2036b08c2bf2c21f6d12a29ac8bb161ef769307e"
+      sha256 "2451639914026ad418b8743d501cc6c853eb469894a5473b4df72f985d8fa60b"
 
       def install
         bin.install "bubblejump"
@@ -45,7 +45,7 @@ class Bubblejump < Formula
     end
     if Hardware::CPU.intel?
       url "http://apt.redbubble.com/bubblejump/v0.8.0/bubblejump_0.8.0_Linux_x86_64.tar.gz"
-      sha256 "016d7934a2d4a1ab676b4befdd33ecea337afd0fd5769994a06dd4ec978c8c2a"
+      sha256 "9619cd90ef297a008d05a8796517024e6d2b1081f96d14374b1630f5b1685f14"
 
       def install
         bin.install "bubblejump"
@@ -57,7 +57,9 @@ class Bubblejump < Formula
 
   def caveats
     <<~EOS
-      To configure Bubblejump's SSH ProxyCommand (useful for database connections), add the config block to your SSH config:
+      To configure Bubblejump's SSH ProxyCommand (useful for database connections),
+      add the config block to your SSH config:
+
       bubblejump proxycommand >> ~/.ssh/config
     EOS
   end

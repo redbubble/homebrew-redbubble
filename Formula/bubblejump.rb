@@ -5,12 +5,14 @@
 class Bubblejump < Formula
   desc "Quickly get shell access to EC2 instances in our VPC"
   homepage "https://github.com/redbubble/bubblejump"
-  version "0.7.0"
+  version "0.8.0"
+
+  depends_on "yak"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "http://apt.redbubble.com/bubblejump/v0.7.0/bubblejump_0.7.0_Darwin_arm64.tar.gz"
-      sha256 "68caac680e7b41c0a51818c3254a706179e7a07513fdc144be8955824c815e1e"
+      url "http://apt.redbubble.com/bubblejump/v0.8.0/bubblejump_0.8.0_Darwin_arm64.tar.gz"
+      sha256 "16476a6d21ebda60d13ad968ba7ec83cce19e7be13b8094440f37d15d11d721d"
 
       def install
         bin.install "bubblejump"
@@ -19,8 +21,8 @@ class Bubblejump < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "http://apt.redbubble.com/bubblejump/v0.7.0/bubblejump_0.7.0_Darwin_x86_64.tar.gz"
-      sha256 "8f90860a9d4f97e6ac0b56e81977db30f042d20156e47a94a28a65d4b31f983c"
+      url "http://apt.redbubble.com/bubblejump/v0.8.0/bubblejump_0.8.0_Darwin_x86_64.tar.gz"
+      sha256 "c9ef7982a80bf85d28102667827d030a5f89276e53a464a8d84df40a329f62fe"
 
       def install
         bin.install "bubblejump"
@@ -32,8 +34,8 @@ class Bubblejump < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "http://apt.redbubble.com/bubblejump/v0.7.0/bubblejump_0.7.0_Linux_arm64.tar.gz"
-      sha256 "3741b7facfecc434a56af714e0cc9d762f34dc3397441e8a99afa841b6658104"
+      url "http://apt.redbubble.com/bubblejump/v0.8.0/bubblejump_0.8.0_Linux_arm64.tar.gz"
+      sha256 "b2e39bfaa14a495c5f28782e2036b08c2bf2c21f6d12a29ac8bb161ef769307e"
 
       def install
         bin.install "bubblejump"
@@ -42,8 +44,8 @@ class Bubblejump < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "http://apt.redbubble.com/bubblejump/v0.7.0/bubblejump_0.7.0_Linux_x86_64.tar.gz"
-      sha256 "0d4c31cb2cfa15bf3631f6b762b883de79c2f827eb5cdbb65d2af67f30977f57"
+      url "http://apt.redbubble.com/bubblejump/v0.8.0/bubblejump_0.8.0_Linux_x86_64.tar.gz"
+      sha256 "016d7934a2d4a1ab676b4befdd33ecea337afd0fd5769994a06dd4ec978c8c2a"
 
       def install
         bin.install "bubblejump"
@@ -53,7 +55,12 @@ class Bubblejump < Formula
     end
   end
 
-  depends_on "yak"
+  def caveats
+    <<~EOS
+      To configure Bubblejump's SSH ProxyCommand (useful for database connections), add the config block to your SSH config:
+      bubblejump proxycommand >> ~/.ssh/config
+    EOS
+  end
 
   test do
     system "#{bin}/bubblejump version"

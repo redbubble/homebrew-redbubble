@@ -5,12 +5,14 @@
 class Yak < Formula
   desc "A tool to log in to AWS through Okta"
   homepage "https://github.com/redbubble/yak"
-  version "1.6.1"
+  version "1.6.2"
+
+  depends_on "pinentry-mac"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/redbubble/yak/releases/download/v1.6.1/yak_1.6.1_darwin_arm64.tar.gz"
-      sha256 "2748a101a2571d27fd05dcf41694d85da10355afe555c9d8c3710eed5f95b45f"
+      url "https://github.com/redbubble/yak/releases/download/v1.6.2/yak_1.6.2_darwin_arm64.tar.gz"
+      sha256 "61f81216219bebe424e53b6cb7c39094149312fc8d125c498c925a21d55129a7"
 
       def install
         bin.install "yak"
@@ -19,8 +21,8 @@ class Yak < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/redbubble/yak/releases/download/v1.6.1/yak_1.6.1_darwin_amd64.tar.gz"
-      sha256 "23155da611fe0300152d74bc3cf6755f10b77dabdfd39272807967b1d7420391"
+      url "https://github.com/redbubble/yak/releases/download/v1.6.2/yak_1.6.2_darwin_amd64.tar.gz"
+      sha256 "b7acc68ffed8f8ea58f5f68172873957d8825d16c63810df20990506e3955657"
 
       def install
         bin.install "yak"
@@ -32,8 +34,8 @@ class Yak < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/redbubble/yak/releases/download/v1.6.1/yak_1.6.1_linux_arm64.tar.gz"
-      sha256 "6cb670894750c82a68c37d399a4e1327a7401aa4239bb54c9b3a890bba3f73ba"
+      url "https://github.com/redbubble/yak/releases/download/v1.6.2/yak_1.6.2_linux_arm64.tar.gz"
+      sha256 "a1e757f0a6031a62d140291ded33bb5b58766c22f4f519bd251d20b4e6e95be1"
 
       def install
         bin.install "yak"
@@ -42,8 +44,8 @@ class Yak < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/redbubble/yak/releases/download/v1.6.1/yak_1.6.1_linux_amd64.tar.gz"
-      sha256 "64249ceed19b29c649d72fc31bb7a848e7e8f2f5c3ebb95043fd5dc77ffc56f9"
+      url "https://github.com/redbubble/yak/releases/download/v1.6.2/yak_1.6.2_linux_amd64.tar.gz"
+      sha256 "eac9462a3db47ca5733d2bce3999dfa73567a0e73f5c884c3190a8492cb504fa"
 
       def install
         bin.install "yak"
@@ -52,8 +54,6 @@ class Yak < Formula
       end
     end
   end
-
-  depends_on "pinentry-mac"
 
   test do
     system "#{bin}/yak --help"

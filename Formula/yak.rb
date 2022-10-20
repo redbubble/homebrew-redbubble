@@ -21,8 +21,8 @@ class Yak < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/redbubble/yak/releases/download/v1.6.5/yak_1.6.5_darwin_amd64.tar.gz"
-      sha256 "85ffa5a333437b9edaaa84a7c8f6c0959d69fa77bcfc96115edd750969e9d687"
+      url "https://github.com/redbubble/yak/releases/download/v1.5.11/yak_1.5.11_darwin_amd64.tar.gz"
+      sha256 "ef668c9a84e28c4deaef647d195cf5d36fca08d0b7ec335c78b63d9a9fcc2c72"
 
       def install
         bin.install "yak"

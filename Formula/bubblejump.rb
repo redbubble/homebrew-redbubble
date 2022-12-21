@@ -5,14 +5,14 @@
 class Bubblejump < Formula
   desc "Quickly get shell access to EC2 instances in our VPC"
   homepage "https://github.com/redbubble/bubblejump"
-  version "0.8.1"
+  version "0.8.2"
 
   depends_on "yak"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "http://apt.redbubble.com/bubblejump/v0.8.1/bubblejump_0.8.1_Darwin_arm64.tar.gz"
-      sha256 "d179d2cb79bc2beeb3de4e913a43def83744d369200fdef6d092ec624fe2d056"
+      url "https://github.com/redbubble/bubblejump/releases/download/v0.8.2/bubblejump_0.8.2_Darwin_arm64.tar.gz"
+      sha256 "d7fa37ea0c23f374500830a8ce57c71deb6145b0cf506cae2250dcbe76247d68"
 
       def install
         bin.install "bubblejump"
@@ -21,8 +21,8 @@ class Bubblejump < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "http://apt.redbubble.com/bubblejump/v0.8.1/bubblejump_0.8.1_Darwin_x86_64.tar.gz"
-      sha256 "a706bb8f52c1ef8ff44ff3aaaeb1ddfeca2b1da9eb4aa2680454fb7dd490618d"
+      url "https://github.com/redbubble/bubblejump/releases/download/v0.8.2/bubblejump_0.8.2_Darwin_x86_64.tar.gz"
+      sha256 "23e1a0658b4c8b0dee9cb7d59007e99ab4e01a1dae4bab7aeb519a2c52aad0c3"
 
       def install
         bin.install "bubblejump"
@@ -34,8 +34,8 @@ class Bubblejump < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "http://apt.redbubble.com/bubblejump/v0.8.1/bubblejump_0.8.1_Linux_arm64.tar.gz"
-      sha256 "d7735dac17e07c0e34fc8db7a8a4d8b96b96ff1219b6c18e6061891f79f13b47"
+      url "https://github.com/redbubble/bubblejump/releases/download/v0.8.2/bubblejump_0.8.2_Linux_arm64.tar.gz"
+      sha256 "eec37dc29777335f6cd3bcb01fdf3e7f784343569b7d7a4067f2813384a05de0"
 
       def install
         bin.install "bubblejump"
@@ -44,8 +44,8 @@ class Bubblejump < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "http://apt.redbubble.com/bubblejump/v0.8.1/bubblejump_0.8.1_Linux_x86_64.tar.gz"
-      sha256 "4c22f6f4257beed26496a5eb1f8d5b7e5d7ac21fa5ad2e32b78d41e63979fc87"
+      url "https://github.com/redbubble/bubblejump/releases/download/v0.8.2/bubblejump_0.8.2_Linux_x86_64.tar.gz"
+      sha256 "2b7876d8cf964e652114e3960dddc884f02dda8ac7d432c198eb7daa781843ad"
 
       def install
         bin.install "bubblejump"

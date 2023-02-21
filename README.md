@@ -10,10 +10,8 @@ To install a tool, you can now simply execute the following:
 
 ```bash
 brew install bubblejump # or some other tool
-brew install yak
-brew install elk
 ```
 
 ### Got problems?
 
-Talk to `#delivery-reliability-engineering` on Slack. 🌽🦄 
+Talk to `#hey-dre` on Slack. 🌽🦄 

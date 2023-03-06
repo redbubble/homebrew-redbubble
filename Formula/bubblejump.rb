@@ -5,12 +5,12 @@
 class Bubblejump < Formula
   desc "Quickly get shell access to EC2 instances in our VPC"
   homepage "https://github.com/redbubble/bubblejump"
-  version "0.9"
+  version "0.9.1"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "http://apt.redbubble.com/bubblejump/v0.9/bubblejump_0.9_Darwin_arm64.tar.gz"
-      sha256 "fb922de0836ee673c879c82d2a2792763fd61a3c5d8d909deaae075c899fef14"
+      url "http://apt.redbubble.com/bubblejump/v0.9.1/bubblejump_0.9.1_Darwin_arm64.tar.gz"
+      sha256 "d5df9d5c1c7e4292d42b7930e67e8b7ae3a51de3c906a43b94a0795b3c0e1ef3"
 
       def install
         bin.install "bubblejump"
@@ -19,8 +19,8 @@ class Bubblejump < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "http://apt.redbubble.com/bubblejump/v0.9/bubblejump_0.9_Darwin_x86_64.tar.gz"
-      sha256 "00431a068af8a423626e1022744c0487a6cc79156fbe7a59a32ff673e566eccc"
+      url "http://apt.redbubble.com/bubblejump/v0.9.1/bubblejump_0.9.1_Darwin_x86_64.tar.gz"
+      sha256 "7c5c4ba56a5ce1fd5e47ec5f2e5b90cee8c18555223eb4e2073c939e8d547ba5"
 
       def install
         bin.install "bubblejump"
@@ -32,8 +32,8 @@ class Bubblejump < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "http://apt.redbubble.com/bubblejump/v0.9/bubblejump_0.9_Linux_arm64.tar.gz"
-      sha256 "034428858488685e8a17aaca9f9293f8065bbbbb3d971f927f0b36b166c066a6"
+      url "http://apt.redbubble.com/bubblejump/v0.9.1/bubblejump_0.9.1_Linux_arm64.tar.gz"
+      sha256 "51dbc614fa77abd9d2592f6c000907460c28b9f719c04273fe680807dd978b40"
 
       def install
         bin.install "bubblejump"
@@ -42,8 +42,8 @@ class Bubblejump < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "http://apt.redbubble.com/bubblejump/v0.9/bubblejump_0.9_Linux_x86_64.tar.gz"
-      sha256 "951180a70c988763c7eb6b56d539a1ad68cf97af71766b433b07e81f16559667"
+      url "http://apt.redbubble.com/bubblejump/v0.9.1/bubblejump_0.9.1_Linux_x86_64.tar.gz"
+      sha256 "f51b000ef59dcfda312ef52d1751b8d640020f42d124acd7a4540afc18a808e3"
 
       def install
         bin.install "bubblejump"
